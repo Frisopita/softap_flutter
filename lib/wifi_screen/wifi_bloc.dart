@@ -39,7 +39,7 @@ class WiFiBlocSoftAP extends Bloc<WifiEvent, WifiState> {
 
     } catch (e) {
       log.e('Error connecting to device $e');
-      yield WifiStateError('Error connecting to device');
+      yield const WifiStateError('Error connecting to device');
     }
     yield WifiStateScanning();
     try {
@@ -51,7 +51,7 @@ class WiFiBlocSoftAP extends Bloc<WifiEvent, WifiState> {
       log.v('Wifi $listWifi');
     } catch (e) {
       log.e('Error scan WiFi network $e');
-      yield WifiStateError('Error scan WiFi network');
+      yield const WifiStateError('Error scan WiFi network');
     }
   }
   Stream<WifiState> _mapProvisioningToState(
@@ -62,7 +62,7 @@ class WiFiBlocSoftAP extends Bloc<WifiEvent, WifiState> {
     await prov.sendReceiveCustomData(customBytes);
     await prov.sendWifiConfig(ssid: event.ssid, password: event.password);
     await prov.applyWifiConfig();
-    await Future.delayed(Duration(seconds: 10));
+    await Future.delayed(const Duration(seconds: 10),);
     var connectionStatus = await prov.getStatus();
 
     if (connectionStatus.state == WifiConnectionState.Connected) {

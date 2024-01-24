@@ -14,7 +14,7 @@ class WifiStateConnecting extends WifiState {}
 class WifiStateError extends WifiState {
   final String errorMsg;
 
-  WifiStateError(this.errorMsg);
+  const WifiStateError(this.errorMsg);
 }
 
 class WifiStateScanning extends WifiState {}
@@ -23,7 +23,7 @@ class WifiStateScanning extends WifiState {}
 class WifiStateLoaded extends WifiState {
   final List<Map<String, dynamic>> wifiList;
 
-  WifiStateLoaded({required this.wifiList});
+  const WifiStateLoaded({required this.wifiList});
 }
 
 class WifiStateProvisioning extends WifiState {}

@@ -26,7 +26,7 @@ class WifiEventScannedBLE extends WifiEvent {}
 class WifiEventLoadedBLE extends WifiEvent {
   final String wifiName;
 
-  WifiEventLoadedBLE({required this.wifiName});
+  const WifiEventLoadedBLE({required this.wifiName});
 
   @override
   List<Object> get props => [wifiName];
@@ -36,7 +36,7 @@ class WifiEventStartProvisioningBLE extends WifiEvent {
   final String ssid;
   final String password;
 
-  WifiEventStartProvisioningBLE({required this.ssid, required this.password});
+  const WifiEventStartProvisioningBLE({required this.ssid, required this.password});
 
   @override
   List<Object> get props => [ssid, password];
@@ -54,7 +54,7 @@ class WifiEventScannedSoftAP extends WifiEvent {}
 class WifiEventLoadedSoftAP extends WifiEvent {
   final String wifiName;
 
-  WifiEventLoadedSoftAP({required this.wifiName});
+  const WifiEventLoadedSoftAP({required this.wifiName});
 
   @override
   List<Object> get props => [wifiName];
@@ -64,7 +64,7 @@ class WifiEventStartProvisioningSoftAP extends WifiEvent {
   final String ssid;
   final String password;
 
-  WifiEventStartProvisioningSoftAP({required this.ssid, required this.password});
+  const WifiEventStartProvisioningSoftAP({required this.ssid, required this.password});
 
   @override
   List<Object> get props => [ssid, password];

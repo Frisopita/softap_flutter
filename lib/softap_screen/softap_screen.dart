@@ -13,29 +13,29 @@ class SoftApScreen extends StatefulWidget {
 
 class _SoftApScreenState extends State<SoftApScreen> {
 
-  void _showBottomSheet(BuildContext _context) {
+  void _showBottomSheet(BuildContext context) {
 
     var bottomSheetController = showModalBottomSheet(
         context: context,
         backgroundColor: Colors.white,
         isScrollControlled: true,
         elevation: 0,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-            topLeft: const Radius.circular(20.0),
-            topRight: const Radius.circular(20.0),
+            topLeft: Radius.circular(20.0),
+            topRight:  Radius.circular(20.0),
           ),
         ),
         builder: (BuildContext context) {
           return Container(
-            padding: EdgeInsets.only(top: 5.0),
+            padding: const EdgeInsets.only(top: 5.0),
             height: MediaQuery.of(context).size.height - 50,
             child: WiFiScreenSoftAP(),
           );
         });
     bottomSheetController.whenComplete(() {
       // after prov.
-      BlocProvider.of<SoftApBloc>(_context).add(SoftApEventStart());
+      BlocProvider.of<SoftApBloc>(context).add(SoftApEventStart());
     });
   }
 
@@ -56,9 +56,9 @@ class _SoftApScreenState extends State<SoftApScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(4.0),
+                      padding: const EdgeInsets.all(4.0),
                       width: MediaQuery.of(context).size.width * 0.85,
-                      child:Text('Please connect WiFi to ESP32 AP (PROV_XXX) in "Wi-Fi Settings". Once you complete it please tap on "Ready" button.',
+                      child: const Text('Please connect WiFi to ESP32 AP (PROV_XXX) in "Wi-Fi Settings". Once you complete it please tap on "Ready" button.',
                       style: TextStyle(fontSize: 18),),
                     ),
 
@@ -66,8 +66,8 @@ class _SoftApScreenState extends State<SoftApScreen> {
                     MaterialButton(
                       color: Colors.lightBlueAccent,
                       elevation: 5,
-                      padding: EdgeInsets.all(15.0),
-                      shape: RoundedRectangleBorder(
+                      padding: const EdgeInsets.all(15.0),
+                      shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(5))),
                       child: Text(
                         'Ready',

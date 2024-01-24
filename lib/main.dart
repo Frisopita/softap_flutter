@@ -21,14 +21,14 @@ class HomeScreen extends StatelessWidget {
           child: MaterialButton(
             color: Colors.lightBlueAccent,
             elevation: 5,
-            padding: EdgeInsets.all(15.0),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(5))),
+            padding: const EdgeInsets.all(15.0),
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(5),),),
             onPressed: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => SoftApScreen()));
+                      builder: (BuildContext context) => SoftApScreen(),),);
             },
             child: Text(
               'Start Provisioning',

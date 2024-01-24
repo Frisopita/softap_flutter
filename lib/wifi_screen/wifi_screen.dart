@@ -6,21 +6,21 @@ import 'wifi.dart';
 import 'wifi_dialog.dart';
 
 class WiFiScreenSoftAP extends StatefulWidget {
-  WiFiScreenSoftAP({Key? key}) : super(key: key);
+  const WiFiScreenSoftAP({super.key});
   @override
   _WiFiScreenSoftAPState createState() => _WiFiScreenSoftAPState();
 }
 
 class _WiFiScreenSoftAPState extends State<WiFiScreenSoftAP> {
-  void _showDialog(Map<String, dynamic> wifi, BuildContext _context) {
+  void _showDialog(Map<String, dynamic> wifi, BuildContext context) {
     showDialog(
-      context: _context,
+      context: context,
       builder: (BuildContext context) {
         return WifiDialog(
           wifiName: wifi['ssid'],
           onSubmit: (ssid, password) {
             print('ssid =$ssid, password = $password');
-            BlocProvider.of<WiFiBlocSoftAP>(_context).add(
+            BlocProvider.of<WiFiBlocSoftAP>(context).add(
                 WifiEventStartProvisioningSoftAP(
                     ssid: ssid, password: password));
           },
@@ -35,11 +35,11 @@ class _WiFiScreenSoftAPState extends State<WiFiScreenSoftAP> {
         children: <Widget>[
           ElevatedButton.icon(
             onPressed: () {},
-            icon: SpinKitFoldingCube(
+            icon: const SpinKitFoldingCube(
               color: Colors.lightBlueAccent,
               size: 20,
             ),
-            label: Text('Connecting..'),
+            label: const Text('Connecting..'),
           )
         ],
       ),
@@ -47,11 +47,11 @@ class _WiFiScreenSoftAPState extends State<WiFiScreenSoftAP> {
         children: <Widget>[
           ElevatedButton.icon(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.check,
               color: Colors.white38,
             ),
-            label: Text(
+            label: const Text(
               'Connected',
               style: TextStyle(
                 color: Colors.white38,
@@ -60,11 +60,11 @@ class _WiFiScreenSoftAPState extends State<WiFiScreenSoftAP> {
           ),
           ElevatedButton.icon(
             onPressed: () {},
-            icon: SpinKitFoldingCube(
+            icon: const SpinKitFoldingCube(
               color: Colors.lightBlueAccent,
               size: 20,
             ),
-            label: Text('Scanning...'),
+            label: const Text('Scanning...'),
           )
         ],
       ),
@@ -114,7 +114,7 @@ class _WiFiScreenSoftAPState extends State<WiFiScreenSoftAP> {
       backgroundColor: Colors.transparent,
       appBar: AppBar(
         elevation: 0,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.black, //change your color here
         ),
         backgroundColor: Colors.transparent,

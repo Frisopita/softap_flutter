@@ -5,8 +5,7 @@ class PasswordFormField extends StatefulWidget {
   final ValueChanged<String> onChanged;
   final FormFieldSetter<String> onSaved;
 
-  PasswordFormField({Key? key, required this.initialValue, required this.onChanged, required this.onSaved})
-      : super(key: key);
+  const PasswordFormField({super.key, required this.initialValue, required this.onChanged, required this.onSaved});
 
   @override
   _PasswordFormFieldState createState() => _PasswordFormFieldState();
@@ -44,8 +43,8 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
                     color: Theme.of(context).primaryColorLight)),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                   width: 1,
-                ))));
+                ),),),);
   }
 }
